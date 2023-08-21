@@ -1,0 +1,48 @@
+html {
+    background: no-repeat center center;
+    min-height: 100%;
+    background-size: cover;
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
+hr {
+    border: 1px solid lightcyan;
+}
+
+button:focus {
+	outline: none;
+}
+
+.main-container-outer {
+    background: black;
+    padding: 5px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main-container-inner {
+    border: 3px solid mediumseagreen;
+    padding: 10px;
+}
+
+.centered-text {
+    text-align: center;
+    color: lightcyan;
+    margin: 5px;
+}
