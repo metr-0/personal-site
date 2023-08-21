@@ -1,5 +1,3 @@
-import json
-
 from django.db import models
 
 
@@ -13,10 +11,10 @@ class Settings(models.Model):
 
     title = models.TextField(verbose_name='title', max_length=255, blank=True)
     name = models.TextField(verbose_name='name', max_length=255, blank=True)
-    description_json_array = models.TextField(verbose_name='description-json-array', blank=True)
+    description = models.TextField(verbose_name='description', blank=True)
 
     def description_array(self):
-        return json.loads(self.description_json_array)
+        return self.description.split('\n')
 
     def __str__(self):
         return 'Settings instance'
