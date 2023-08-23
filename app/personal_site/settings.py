@@ -27,6 +27,7 @@ SECRET_KEY = getenv('SECRET_KEY')
 DEBUG = bool(int(getenv('DEBUG', '1')))
 
 ALLOWED_HOSTS = getenv('ALLOWED_HOSTS', '').split()
+CSRF_TRUSTED_ORIGINS = getenv('HOSTS', '').split()
 
 
 # Application definition
