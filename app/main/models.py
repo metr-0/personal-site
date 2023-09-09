@@ -20,7 +20,7 @@ class Page(models.Model):
         return self.description.split('\n')
 
     def __str__(self):
-        return f'{self.title} (homepage)' if self.is_homepage else f'{self.title}'
+        return f'{self.slug} (homepage)' if self.is_homepage else f'{self.slug}'
 
 
 class Block(models.Model):

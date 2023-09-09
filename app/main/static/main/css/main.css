@@ -41,6 +41,11 @@ button:focus {
     padding: 10px;
 }
 
+.main.container-inner {
+    max-height: 500px;
+    overflow: auto;
+}
+
 .text {
     color: lightcyan;
     margin: 5px;
@@ -48,4 +53,10 @@ button:focus {
 
 .text.centered-text {
     text-align: center;
+}
+
+@media screen and (max-height: 525px) {
+    .main.container-inner {
+        max-height: 300px;
+    }
 }
