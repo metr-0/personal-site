@@ -26,19 +26,23 @@
         {% for item in row.items %}
 
         {% if item.type == 'Link' %}
-        <a class="item item-link" href="{{ item.url }}" style="background-color: {{ item.background_color }}; width: {{ item.width }}%">
-            <img class="icon" src="{{ item.icon.url }}" alt="icon" style="border-color: {{ item.foreground_color }}"/>
-            <h3 class="text centered-text" style="color: {{ item.foreground_color }}">{{ item.title }}</h3>
-        </a>
+        <div class="item-outer" style="width: {{ item.width }}%">
+            <a class="item item-link" href="{{ item.url }}" style="background-color: {{ item.background_color }}">
+                <img class="icon" src="{{ item.icon.url }}" alt="icon" style="border-color: {{ item.foreground_color }}"/>
+                <h3 class="text centered-text" style="color: {{ item.foreground_color }}">{{ item.title }}</h3>
+            </a>
+        </div>
 
         {% elif item.type == 'Text' %}
-        <div class="item item-text container-inner" style="width: {{ item.width }}%">
-            <img class="icon" src="{{ item.icon.url }}" alt="icon"/>
-            <div>
-                <h3 class="text">{{ item.title }}</h3>
-                {% for line in item.description_array %}
-                <p class="text">{{ line }}</p>
-                {% endfor %}
+        <div class="item-outer" style="width: {{ item.width }}%">
+            <div class="item item-text container-inner">
+                <img class="icon" src="{{ item.icon.url }}" alt="icon"/>
+                <div>
+                    <h3 class="text">{{ item.title }}</h3>
+                    {% for line in item.description_array %}
+                    <p class="text">{{ line }}</p>
+                    {% endfor %}
+                </div>
             </div>
         </div>
 
@@ -48,4 +52,9 @@
     {% endfor %}
 </div>
 {% endfor %}
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'main/js/linkHoverEffect.js' %}"></script>
 {% endblock %}

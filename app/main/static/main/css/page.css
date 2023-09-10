@@ -1,19 +1,18 @@
+.item-outer {
+    margin: 5px;
+}
+
 .item {
-    display: flex;
-    align-items: center;
+    padding: 5px;
 
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 
-    padding: 5px;
-    margin: 5px;
-    transition: 250ms;
+    display: flex;
+    align-items: center;
     overflow: hidden;
     position: relative;
-}
-
-.item.item-link {
 }
 
 .item img.icon {
